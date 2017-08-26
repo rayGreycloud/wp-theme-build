@@ -10,6 +10,7 @@ wp-links-opml.php
 wp-load.php
 wp-login.php
 wp-mail.php
+wp-settings.php
 wp-signup.php
 wp-trackback.php
 xmlrpc.php
