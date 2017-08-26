@@ -4,6 +4,7 @@
 wp-activate.php
 wp-blog-header.php
 wp-comments.php
+wp-comments-post.php
 wp-cron.php
 wp-links-opml.php
 wp-load.php
