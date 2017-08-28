@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-	<!-- Content
-    ============================================= -->
+
+	<!-- Content ============================================= -->
 	<section id="content">
 
 		<div class="content-wrap">
@@ -25,70 +25,61 @@
 
 			<div class="container clearfix">
 
-				<!-- Post Content
-                ============================================= -->
+				<!-- Post Content ============================================= -->
 				<div class="postcontent nobottommargin clearfix">
 
-					<!-- Posts
-                    ============================================= -->
+					<!-- Posts ============================================= -->
 					<div id="posts">
-					<?php
+<?php
+if( have_posts() ) {
+	while ( have_posts() ) {
+		the_post();
+?>
 
-					if( have_posts() ) {
-						while ( have_posts() ) {
-							the_post();
+						<div class="entry clearfix">
+		<?php
+		if(has_post_thumbnail()) {
+		?>
+					    <div class="entry-image">
+					      <a href="<?php the_permalink(); ?>" data-lightbox="image">
+					      <?php the_post_thumbnail('full', array('class' => 'image_fade')); ?>
+					      </a>
+					    </div>
+		<?php
+		}
+		?>
 
-					?>
-
-	<div class="entry clearfix">
-  <?php
-
-  if(has_post_thumbnail()) {
-  ?>
-    <div class="entry-image">
-      <a href="<?php the_permalink(); ?>" data-lightbox="image">
-      <?php the_post_thumbnail('full', array('class' => 'image_fade')); ?>
-      </a>
-    </div>
-  <?php
-  }
-  ?>
-
-		<div class="entry-title">
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		</div>
-		<ul class="entry-meta clearfix">
-			<li><i class="icon-calendar3"></i> <?php echo get_the_date(); ?></li>
-			<li><a href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>"><i class="icon-user"></i> <?php the_author(); ?></a></li>
-			<li><i class="icon-folder-open"></i> <?php the_category(' '); ?></li>
-			<li><a href="<?php the_permalink(); ?>#comments"><i class="icon-comments"></i> <?php comments_number('0'); ?> Comments</a></li>
-		</ul>
-		<div class="entry-content">
-			<?php the_excerpt(); ?>
-			<a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
-		</div>
-	</div>
-							<?php
-						}
-					}
-
-					?>
-
-
+							<div class="entry-title">
+								<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+							</div>
+							<ul class="entry-meta clearfix">
+								<li><i class="icon-calendar3"></i> <?php echo get_the_date(); ?></li>
+								<li><a href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>"><i class="icon-user"></i> <?php the_author(); ?></a></li>
+								<li><i class="icon-folder-open"></i> <?php the_category(' '); ?></li>
+								<li><a href="<?php the_permalink(); ?>#comments"><i class="icon-comments"></i> <?php comments_number('0'); ?> Comments</a></li>
+							</ul>
+							<div class="entry-content">
+								<?php the_excerpt(); ?>
+								<a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
+							</div>
+						</div>
+<?php
+	}
+}
+?>
 					</div><!-- #posts end -->
-
-					<!-- Pagination
-                    ============================================= -->
+<!-- Pagination ============================================= -->
 					<ul class="pager nomargin">
-						<li class="previous"><a href="#">&larr; Older</a></li>
-						<li class="next"><a href="#">Newer &rarr;</a></li>
+						<li class="previous"><?php previous_posts_link('&larr; Newer'); ?></li>
+						<li class="next"><?php next_posts_link('Older &rarr;'); ?></li>
 					</ul><!-- .pager end -->
+
 				</div><!-- .postcontent end -->
+
 <?php get_sidebar(); ?>
 
 			</div>
 		</div>
-
 	</section><!-- #content end -->
 
 <?php get_footer(); ?>
