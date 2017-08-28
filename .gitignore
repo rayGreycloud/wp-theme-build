@@ -1,10 +1,10 @@
+/wp-admin/
 /wp-content/plugins/
-
 /wp-content/themes/udemy/assets/*.html
 /wp-content/themes/udemy/assets/.idea
-
-/wp-admin/
+/wp-content/uploads
 /wp-includes/
+
 wp-activate.php
 wp-blog-header.php
 wp-comments.php
