@@ -42,7 +42,7 @@
 
 	<div class="entry clearfix">
 		<div class="entry-image">
-			<a href="/assets/images/blog/full/17.jpg" data-lightbox="image">
+			<a href="/images/blog/full/17.jpg" data-lightbox="image">
 			<?php the_post_thumbnail('full', array('class' => 'image_fade')); ?>
 			</a>
 		</div>
