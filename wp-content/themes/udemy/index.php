@@ -70,8 +70,8 @@ if( have_posts() ) {
 					</div><!-- #posts end -->
 <!-- Pagination ============================================= -->
 					<ul class="pager nomargin">
-						<li class="previous"><?php previous_posts_link('&larr; Newer'); ?></li>
-						<li class="next"><?php next_posts_link('Older &rarr;'); ?></li>
+						<li class="previous"><?php next_posts_link('&larr; Older'); ?></li>
+						<li class="next"><?php previous_posts_link('Newer &rarr;'); ?></li>
 					</ul><!-- .pager end -->
 
 				</div><!-- .postcontent end -->
