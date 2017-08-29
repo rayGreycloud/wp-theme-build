@@ -25,10 +25,10 @@
 
 			<div class="container clearfix">
 
-				<!-- Post Content ============================================= -->
+<!-- Post Content ============================================= -->
 				<div class="postcontent nobottommargin clearfix">
 
-					<!-- Posts ============================================= -->
+<!-- Posts ============================================= -->
 					<div id="posts">
 <?php
 if( have_posts() ) {
