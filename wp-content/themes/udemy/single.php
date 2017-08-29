@@ -99,13 +99,13 @@ if( have_posts() ) {
 ============================================= -->
 							<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">Posted by <span><a href="<?php echo get_author_posts_url( get_the_author_meta('ID') ); ?>"><?php the_author(); ?></a></span></h3>
+								<h3 class="panel-title">Posted by <span><a href="<?php echo $author_url; ?>"><?php the_author(); ?></a></span></h3>
 							</div>
 								<div class="panel-body">
 									<div class="author-image">
-										<img src="images/author/1.jpg" alt="" class="img-circle">
+										<?php echo get_avatar($author_ID, 90, '', false, array('class' => 'img-circle')); ?>
 									</div>
-									<?php get_the_author_meta('user_description'); ?>
+									<?php echo nl2br(get_the_author_meta('description')); ?>
 								</div>
 							</div><!-- Post Single - Author End -->
 
