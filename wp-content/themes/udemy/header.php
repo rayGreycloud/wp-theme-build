@@ -31,11 +31,17 @@
 				<!-- Top Links
                 ============================================= -->
 				<div class="top-links">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="faqs.html">FAQs</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
+					<?php
+
+					if( has_nav_menu( 'secondary' )) {
+						wp_nav_menu(array(
+							'theme_location'	=> 'secondary',
+							'container'				=> false,
+							'fallback_cb'			=> false,
+							'depth'						=> 1
+						));
+					}
+					?>
 				</div><!-- .top-links end -->
 
 			</div>
@@ -69,11 +75,26 @@
 			<!-- Logo
             ============================================= -->
 			<div id="logo">
-				<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png">Udemy</a>
+<?php
+	if (has_custom_logo()) {
+		the_custom_logo();
+	} else {
+?>
+				<a href="<?php home_url('/'); ?>" class="standard-logo" data-dark-logo="images/logo-dark.png"><?php bloginfo('name')?></a>
+<?php
+}
+?>
+
 			</div><!-- #logo end -->
 
 			<div class="top-advert">
-				<img src="images/magazine/ad.jpg" alt="Ad">
+				<?php
+
+				if (function_exists('quads_ad')) {
+					echo quads_ad(array('location' => 'udemy_header'));
+				}
+
+				?>
 			</div>
 
 		</div>
