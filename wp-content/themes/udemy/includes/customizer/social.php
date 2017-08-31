@@ -18,7 +18,8 @@ function ru_social_customizer_section($wp_customize) {
   ));
   $wp_customize->add_section('ru_social_section', array(
     'title'    =>  __('Udemy Social Settings', 'udemy'),
-    'priority' => 30
+    'priority' => 30,
+    'panel'    => 'udemy'
   ));
 
   $wp_customize->add_control(
