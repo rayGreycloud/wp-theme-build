@@ -9,6 +9,7 @@ include( get_template_directory().'/includes/setup.php' );
 include( get_template_directory().'/includes/widgets.php' );
 include( get_template_directory().'/includes/theme-customizer.php' );
 include( get_template_directory().'/includes/customizer/social.php' );
+include( get_template_directory().'/includes/customizer/misc.php' );
 
 // Hooks
 add_action('wp_enqueue_scripts', 'ru_enqueue');
