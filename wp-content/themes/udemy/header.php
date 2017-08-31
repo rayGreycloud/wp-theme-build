@@ -192,8 +192,8 @@ if( has_nav_menu( 'primary' )) {
                     ============================================= -->
 					<div id="top-search">
 						<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-						<form action="search.html" method="get">
-							<input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+						<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+							<input type="text" name="s" class="form-control" value="<?php the_search_query(); ?>" placeholder="<?php _e( 'Type &amp; Hit Enter..', 'udemy' ); ?>">
 						</form>
 					</div><!-- #top-search end -->
 
