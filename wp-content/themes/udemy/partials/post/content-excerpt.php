@@ -20,13 +20,28 @@
 				<?php
 				}
 				 ?>
-
 			 	</div>
 			</div>
 		</div>
 	 </div>
 	 <?php
 } else if (has_post_thumbnail() == "video") {
+	$content = apply_filters('the_content', get_the_content());
+	$video = false;
+
+	if (!strpos($content, 'wp-playlist-script')) {
+		$video = get_media_embedded_in_content(
+			$content,
+			array('video', 'object', 'embed', 'iframe')
+		);
+	}
+
+	if ($video) {
+		echo '<div class="entry-video">';
+		echo $video[0];
+		echo '<div>';
+	}
+
 	?>
  	 <div class="entry-image">
 
