@@ -39,20 +39,24 @@
 	if ($video) {
 		echo '<div class="entry-video">';
 		echo $video[0];
-		echo '<div>';
+		echo '</div>';
 	}
 
-	?>
- 	 <div class="entry-image">
-
- 	 </div>
- 	 <?php
 } else if (get_post_format() == "audio") {
-	?>
- 	 <div class="entry-image">
+	$content = apply_filters('the_content', get_the_content());
+	$audio = false;
 
- 	 </div>
- 	 <?php
+	if (!strpos($content, 'wp-playlist-script')) {
+		$audio = get_media_embedded_in_content(
+			$content,
+			array('audio', 'iframe')
+		);
+	}
+
+	if ($audio) {
+		echo $audio[0];
+	}
+
 } else if (has_post_thumbnail()) {
 ?>
   <div class="entry-image">
