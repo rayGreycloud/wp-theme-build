@@ -2,10 +2,12 @@
 
 function ru_misc_customizer_section($wp_customize) {
   $wp_customize->add_setting('ru_header_show_search', array(
-    'default' =>  'yes'
+    'default'   =>  'yes',
+    'transport' =>  'postMessage'
   ));
   $wp_customize->add_setting('ru_header_show_cart', array(
-    'default' =>  'yes'
+    'default' =>  'yes',
+    'transport' =>  'postMessage'
   ));
   $wp_customize->add_setting('ru_footer_copyright_text', array(
     'default' =>  'Copyright &copy; 2017 All Rights Reserved by rG devWorks'
