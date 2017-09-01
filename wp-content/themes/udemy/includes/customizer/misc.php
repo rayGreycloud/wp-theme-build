@@ -18,6 +18,12 @@ function ru_misc_customizer_section($wp_customize) {
   $wp_customize->add_setting('ru_footer_privacy_page', array(
     'default' =>  0
   ));
+  $wp_customize->add_setting('ru_show_header_popular_posts_widget', array(
+    'default' =>  false
+  ));
+  $wp_customize->add_setting('ru_popular_posts_widget_title', array(
+    'default' =>  'Breaking News'
+  ));
 
   $wp_customize->add_section('ru_misc_section', array(
     'title'     =>  __('Udemy Misc Settings', 'udemy'),
@@ -49,6 +55,28 @@ function ru_misc_customizer_section($wp_customize) {
       'choices' => array(
         'yes'   => __('Yes', 'udemy')
       )
+    )
+  ));
+  $wp_customize->add_control( new WP_Customize_Control(
+    $wp_customize,
+    'ru_show_header_popular_posts_widget_input',
+    array(
+      'label'   => __('Show Popular Posts in Header', 'udemy'),
+      'section' => 'ru_misc_section',
+      'settings'=> 'ru_show_header_popular_posts_widget',
+      'type'    => 'checkbox',
+      'choices' => array(
+        'yes'   => __('Yes', 'udemy')
+      )
+    )
+  ));
+  $wp_customize->add_control( new WP_Customize_Control(
+    $wp_customize,
+    'ru_popular_posts_widget_title_input',
+    array(
+      'label'   => __('Set Popular Posts Widget Title', 'udemy'),
+      'section' => 'ru_misc_section',
+      'settings'=> 'ru_popular_posts_widget_title',
     )
   ));
 
