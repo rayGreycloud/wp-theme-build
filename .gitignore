@@ -1,6 +1,6 @@
 /wp-admin/
 /wp-content/plugins/*
-!/wp-content/plugins/recipe
+!/wp-content/plugins/recipe/
 /wp-content/themes/udemy/assets/*.html
 /wp-content/themes/udemy/assets/.idea
 /wp-content/uploads
